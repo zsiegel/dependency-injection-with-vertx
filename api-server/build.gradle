@@ -1,0 +1,15 @@
+apply plugin: "com.github.johnrengelman.shadow"
+
+shadowJar {
+    archiveFileName = 'api-server.jar'
+    manifest {
+        attributes 'Main-Class': 'com.zsiegel.api.ServerKt'
+    }
+}
+
+dependencies {
+    implementation libraries.kotlin_jdk8
+    implementation libraries.vertx
+    implementation libraries.kotlin_coroutines_core
+    implementation libraries.guice
+}
